@@ -1,0 +1,37 @@
+Instalação e configuração do postgres
+
+-- Instalar
+
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+
+-- Fazer login no psql com usuario padrão postgres
+
+sudo -u postgres psql
+
+-- Alterar senha do usuario logado no psql
+
+\password
+
+-- Para fechar o psql use
+\q
+
+-- Permitir acesso remoto
+
+nano /etc/postgresql/versao_do_postgres/main/postgresql.conf
+Alterar : 
+#listen_addresses = 'localhost' => listen_addresses = '*'
+
+nano /etc/postgresql/versao_do_postgres/main/pg_hba.conf
+Alterar:
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            md5
+=>
+# IPv4 local connections:
+host    all             all             0.0.0.0/0               md5
+
+Liberar porta:
+sudo ufw allow 5432/tcp
+
+Reiniciar postgres
+sudo systemctl restart postgresql
