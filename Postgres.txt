@@ -20,7 +20,9 @@ sudo -u postgres psql
 
 nano /etc/postgresql/versao_do_postgres/main/postgresql.conf
 Alterar : 
-#listen_addresses = 'localhost' => listen_addresses = '*'
+#listen_addresses = 'localhost' 
+=> 
+listen_addresses = '*'
 
 nano /etc/postgresql/versao_do_postgres/main/pg_hba.conf
 Alterar:
