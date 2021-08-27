@@ -1,0 +1,29 @@
+-- Novo projeto DotNet para api's web
+dotnet new webapi -o NomeDoProjeto
+
+-- Novo projeto DotNet para realização de testes
+dotnet new xunit -o NomeDoProjeto
+
+-- Restaura as dependências e ferramentas de um projeto.
+dotnet restore
+
+-- Compilar
+dotnet build
+
+-- Publicar (Gera os arquivos necessários para para deploy) neste caso para uma maquina ubuntu
+dotnet publish -c Release -r ubuntu.20.04-x64 -p:PublishReadyToRun=true
+
+-- Executa projetos de testes 
+dotnet test
+
+-- Nova solução
+dotnet new sln
+
+-- Lista projetos na solução
+dotnet sln list
+
+-- Adiciona projeto a solução
+dotnet sln NomeDaSolucao add path/NomeDoProjeto.csproj
+
+-- Remove projeto da solução
+dotnet sln NomeDaSolucao remove path/NomeDoProjeto.csproj
