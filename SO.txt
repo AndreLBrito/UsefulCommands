@@ -1,0 +1,5 @@
+-- Conexao via ssh
+ssh -i path/ChaveSSH usuario@ip
+
+-- Copia arquivos para outros servidores de forma segura
+scp -i path/ChaveSSH path/ArquivoOrigem usuario@ip:/PathDestino
