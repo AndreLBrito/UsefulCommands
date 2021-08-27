@@ -1,4 +1,4 @@
-Instalação e configuração do postgres
+Instalação e configuração do postgres no linux
 
 -- Instalar
 
